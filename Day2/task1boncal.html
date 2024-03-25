@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bonus Calculator</h1>
+    Enter Salary:<input type="text" name="salary" id="salary"><br>
+    Enter Year Of Experience:<input type="text" name="yoe" id="yoe"><br>
+    <button type="button" onclick="calcBonus()">Calculate Bonus</button>
+    <p id="bonusAmount"></p>
+    <p id="totalSalary"></p>
+    <script>
+        function calcBonus(){
+            let salary=Number(document.getElementById('salary').value);
+            let yoe=Number(document.getElementById('yoe').value);
+            if(salary<30000 && yoe>3)
+            {
+                 let bonusAmount=salary*0.05;
+                 let finalSalary=salary+bonusAmount;
+                 document.getElementById('bonusAmount').innerHTML="Bonus: Rs."+bonusAmount.toFixed(2);
+                 document.getElementById('totalSalary').innerHTML="Total Salary: Rs."+finalSalary.toFixed(2);
+            }else
+            {    
+                document.getElementById('bonusAmount').innerHTML="No Bonus Applied";
+                document.getElementById('totalSalary').innerHTML="Total Salary: Rs."+salary;
+            }
+        }
+    </script>
+</body>
+</html>

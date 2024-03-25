@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount2</title>
+    <style>
+         body {
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Discount Calculator</h1>
+    Enter BillAmount:<input type="text" name="bill" id="bill"><br>
+    <button type="button" onclick="calcBill()">Find</button><br>
+    <p id="discountPrice"></p>
+    <p id="finalBill"></p>
+    <script>
+        function calcBill(){
+            let billAmount=Number(document.getElementById('bill').value);
+            if(billAmount > 2000 )
+            {
+                let discount=billAmount/10;
+                let finalBill=billAmount-discount;
+                document.getElementById('discountPrice').innerHTML="Discount: Rs."+discount.toFixed(2);
+                document.getElementById('finalBill').innerHTML="Total Bill: Rs."+finalBill.toFixed(2);
+            }
+            else if(billAmount > 1000)
+            {
+                let discount=billAmount*0.05;
+                let finalBill=billAmount-discount;
+                document.getElementById('discountPrice').innerHTML="Discount: Rs."+discount.toFixed(2);
+                document.getElementById('finalBill').innerHTML="Total Bill: Rs."+finalBill.toFixed(2);
+            }
+            else
+            {
+                document.getElementById('discountPrice').innerHTML="Discount Not Applied";
+                document.getElementById('finalBill').innerHTML="Total Bill: Rs."+billAmount;
+            }
+        }
+    </script>
+    
+</body>
+</html>

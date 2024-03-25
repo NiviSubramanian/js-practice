@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add the Range</title>
+</head>
+<body>
+    <h3>ADD THE RANGE</h3>
+    <div>
+        Number Range:
+        <input type="text" name="num1" id="num1"/>
+        <input type="text" name="num2" id="num2"/><br>
+        <button type="button"  onclick="addRange()">ADD</button><br>
+        Result:<input type="text" name="res" id="res"> 
+    </div>
+    <script>
+        function addRange(){
+            let num1=Number(document.getElementById('num1').value);
+            let num2=Number(document.getElementById('num2').value);
+            let result=0;
+            for(let num=num1;num<=num2;num++)
+            {
+                result+= num ;
+            }
+            document.getElementById('res').value=result;
+        }
+    </script>
+    
+</body>
+</html>

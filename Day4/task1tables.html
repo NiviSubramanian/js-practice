@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Tables</title>
+</head>
+<body>
+    <div>
+        <h3>Multiplication Tables</h3>
+        <div>
+            Enter a Number:<input type="text" id="num1" name="num1"/>
+            <button type="button" onclick="multiTables()">Tables</button> 
+            <p id="tables"></p> 
+        </div>
+        <script>
+            function multiTables(){
+                let num=Number(document.getElementById('num1').value);
+                let result="";
+                for(let num1=1;num1<=10;num1++)
+                {
+                    result+=num+"*"+num1+"="+(num*num1)+"<br>";
+                }
+                document.getElementById('tables').innerHTML=result;
+            }
+        </script>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+</head>
+<body>
+    Total Classes Held: <input type="text" name="totclass" id="totclass"><br>
+    Total Classes Attended: <input type="text" name="classattend" id="classattend"><br>
+    <button type="button" onclick="checkAttendance()">Check Attendance</button>
+    <p id="result"></p>
+    <script>
+        function checkAttendance()
+        {
+            let classHeld=Number(document.getElementById('totclass').value);
+            let classAttend=Number(document.getElementById('classattend').value);
+            let attendancePercentage=(classAttend/classHeld)*100;
+            if(attendancePercentage>=75)
+            {
+                document.getElementById('result').innerHTML = "Attendance Percentage: " + attendancePercentage.toFixed(2) + "%.<br> Student is allowed.";
+            }
+            else
+            {
+                document.getElementById('result').innerHTML = "Attendance Percentage: " + attendancePercentage.toFixed(2) + "%.<br> Student is not allowed.";
+
+            }
+        }
+    </script>
+</body>
+</html>

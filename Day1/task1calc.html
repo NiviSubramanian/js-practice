@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            height: 500px;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .calculator{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding:20px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 18px;
+        }
+        button{
+            padding: 10px;
+            font-size: 18px;
+            margin: 5px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+    Num1: <input type="text" name="num1" id="num1"><br>
+    Num2: <input type="text" name="num2" id="num2"><br>
+    <button type="button" onclick="calc('Add')">Add</button>
+    <button type="button" onclick="calc('Sub')">Sub</button>
+    <button type="button" onclick="calc('Mult')">Mult</button>
+    <button type="button" onclick="calc('Div')">Div</button><br>
+    Result: <input type="text" name="result" id="result">
+    <script>
+        let Num1,Num2;
+        function getInput(){
+             Num1=Number(document.getElementById('num1').value);
+             Num2=Number(document.getElementById('num2').value);    
+        }
+        function calc(opt) {
+            getInput();
+            let Result="";
+            if(opt=="Add"){
+                Result=Num1+Num2;
+            }else if(opt=="Sub"){
+                Result=Num1-Num2;
+            }else if(opt=="Mult"){
+                Result=Num1*Num2;
+            }else{
+                Result=Num1/Num2;
+            }
+            document.getElementById('result').value=Result;
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square</title>
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #result {
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    Length:<input type="text" placeholder="Enter Length" id="length"/><br>
+    Breadth:<input type="text" placeholder="Enter Breadth" id="breadth"/><br>
+    <button onclick="checkSquare()">Check</button>
+    <p id="result"></p>
+    </div>
+    <script>
+        function checkSquare(){
+            let Length=Number(document.getElementById('length').value);
+            let Breadth=Number(document.getElementById('breadth').value);
+            let result="";
+            if(Length==Breadth)
+            {
+                result="It's a Square!";
+            }
+            else{
+                result="It's not a Square!";
+            }
+            document.getElementById('result').innerText=result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <title>Bill Calculator</title>
+</head>
+<body>
+        <h1>Bill Calculator</h1>
+        Enter Bill Amount:<input type="number" id="billAmount" name="billAmount"><br>
+        <button onclick="calculateBill()">Calculate Bill</button>
+        <p id="discountPrice"></p>
+        <p id="finalBill"></p>
+    <script>
+        function calculateBill() {
+            let billAmount = Number(document.getElementById('billAmount').value);
+            if (billAmount > 1000) {
+                let discount = billAmount/10;
+                let finalBill=billAmount-discount;
+                document.getElementById('discountPrice').innerHTML = "Discount: Rs." + discount.toFixed(2);
+                document.getElementById('finalBill').innerHTML = "Final Bill Amount: Rs." + finalBill.toFixed(2);
+            }else{
+                document.getElementById('discountPrice').innerHTML = "No Discount Applied";
+                document.getElementById('finalBill').innerHTML = "Final Bill Amount:Rs." + billAmount;
+            }
+        }
+    </script>
+</body>
+</html>

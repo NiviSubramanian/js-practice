@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse</title>
+</head>
+<body>
+    <h1>Reverse Number</h1>
+    Enter a Number:<input type="text" name="num" id="num"><br>
+    <button type="button" onclick="findRev()">Reverse</button><br>
+    Reversed Number:<input type="text" name="result" id="result">
+    <script>
+        function findRev(){
+            let num=Number(document.getElementById('num').value);
+            let sum =0;
+            let rem;
+            while (num>0)
+            {
+                 rem=num%10;
+                 sum=sum*10+rem;
+                 num=Math.floor(num/10);
+                
+            }
+            document.getElementById('result').value=sum;
+        }
+    </script>
+</body>
+</html>

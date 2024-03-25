@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days in Month</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .month-input {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        button {
+            padding: 3px;
+            font-size: 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="month-input">
+        <h2 style="text-align: center;">Select a Month:</h2>
+        Month:<select id="month" name="month" onchange="calculateDays()">
+            <option>---Select---</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select> <br>
+        Days:<input type="text" name="result" id="result" >
+    </div>
+
+    <script>
+        function calculateDays() {
+            let month = document.getElementById('month').value;
+            let days;
+
+            if (month == 'January' || month == 'March' || month == 'May' || month == 'July' || month == 'August' || month == 'October' || month == 'December') {
+                days = 31;
+            } else if (month == 'April' || month == 'June' || month == 'September' || month == 'November') {
+                days = 30;
+            } else if(month =='February') {
+                days = 28; 
+            }else{
+                days="Invalid Month";
+            }
+
+            document.getElementById('result').value = days;
+        }
+    </script>
+</body>
+</html>

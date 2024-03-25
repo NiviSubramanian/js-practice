@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .grade-calculator {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            margin-bottom:10px;
+            padding:3px;
+            font-size:18px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 18px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="grade-calculator">
+        <h1 style="background-color: aquamarine;">Grade Calculator</h1>
+        Mark: <input type="text" name="score" id="score"/><br>
+        <button onclick="calculateGrade()">Calculate Grade</button><br>
+        Grade: <input type="text" name="grade" id="grade"/>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            let score = Number(document.getElementById('score').value);
+                let grade = getGrade(score);
+                document.getElementById('grade').value = grade;
+            
+        }
+        function getGrade(score) {
+            if (score >= 90) {
+               return 'A';
+            } else if (score >= 80) {
+                return 'B';
+            } else if (score >= 70) {
+               return 'C';
+            } else if (score >= 60) {
+               return 'D';
+            } else if(score>=50) {
+                return 'E';
+            } else{
+                return 'F';
+            }
+        }
+    </script>
+</body>
+</html>
